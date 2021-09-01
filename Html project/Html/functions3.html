@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="../Css/bootstrap.min.css">
+    
+
+    <link rel="stylesheet" href="../Css/style.css">
+    <link rel="stylesheet" href="../Css/main.css"> 
+
+    <title>Python Beginner Course</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-dark bg-primary"> 
+      
+        <a class="navbar-brand" href="homepage.html">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+
+
+<div id="main">
+
+    <div class="container">
+
+        <h1>User Defined Functions </h1><br>
+        <p>
+          In this tutorial you will learn user defined functions in Python with the help of examples.
+          <br>
+          User defined functions are those that we define ourselves in our program and then call them wherever we want. 
+          In this article, we are going to discuss about user defined functions.
+        </p>
+
+        <p><b>What are User defined Functions in Python?</b></p>
+        <p>
+          Functions are so powerful in programming.
+        A function that you define yourself in a program is known as user defined function. You can give any name to a user defined function, however you cannot use the Python keywords as function name.
+        <br>
+        In python, we define the user-defined function using def keyword, followed by the function name.
+        <br>
+        Function name is followed by the parameters in parenthesis, followed by the colon
+        </p>
+
+        <p><b>For example:</b></p>
+<pre>
+def function_name(parameter_1, parameter_2, ...) :
+  statements
+  ....
+  return something
+</pre>   
+<br><br>
+
+    <p>Below is a simple function that will just print something on the screen</p>
+<pre>
+  def printSomething():
+    print("This function prints something on the screen")
+  
+  # calling the function
+  printSomething()
+</pre>
+
+    <p> Output</p>
+<pre>
+  This function prints something on the screen
+</pre>
+    <hr>
+
+    <p>The function below Loops throung a list and print everything in it on the screen</p>
+
+<pre>
+  L = [4, 2, 5, 6, 10, 3, -2, -1, 9, 8]
+  def printList():
+    
+  for i in L:
+    print(i)
+
+  printList()
+</pre>
+
+    <p>Output</p>
+<pre>
+  4
+  2
+  5
+  6
+  10
+  3
+  -2
+  -1
+  9
+  8
+</pre>
+    
+        
+
+
+
+
+
+
+
+    <hr>
+    <p>The function below sort a list of numbers</p>
+<pre>
+  L = [4, 2, 5, 6, 10, 3, -2, -1, 9, 8]
+  def sortList():
+    
+    for i in range(len(L)):
+        min_val = min(L[i:len(L)])
+        min_ind = L.index(min_val)
+        L[i], L[min_ind] = L[min_ind], L[i]
+
+    print(L)
+  # Calling the function
+  sortList()
+</pre>
+
+    <p> Output</p>
+<pre>
+  [-2, -1, 2, 3, 4, 5, 6, 8, 9, 10]
+</pre>
+    <hr><br>
+
+    <h3>Functions getting more massive</h3>
+    <p>Let's start coding games using functions</p>
+<pre>
+  import random
+  import time
+
+  def displayIntro():
+    print('You are in a land full of dragons. ')
+    time.sleep(2)
+    print('''In front of you, you see two caves. 
+    In one cave, the dragon is friendly and will share his treasure with you.
+    The other dragon is greedy and hungry, and will eat you on sight.''' , '\n')
+
+  def chooseCave():
+    cave = " "
+    while cave != '1' and cave != '2':
+        print('Which cave will you go into? (1 or 2)')
+        cave = input()
+
+    return cave
+
+  def checkcave(chosenCave):
+    print('You approach the cave....')
+    time.sleep(2)
+    print('It is dark and spooky....')
+    time.sleep(2)
+    print('A large dragon jumps out in front of you! He opens his jaws and ....')
+    print()
+    time.sleep(2)
+
+    friendlyCave = random.randint(1, 2)
+    
+    if chosenCave == str(friendlyCave):
+        print('Gives his treasure!')
+    else:
+        print('Gobbles you down in one bite!')
+
+
+  playAgain = 'yes'
+  while playAgain == 'yes' or playAgain == 'y':
+
+    displayIntro() 
+
+    caveNumber = chooseCave()
+
+    checkcave(caveNumber)
+
+    print('Do you want to play again? (yes or no)')
+    playAgain = input()
+    playAgain = playAgain.lower()
+
+</pre>
+
+    <p>Output</p>
+<pre>
+  You are in a land full of dragons.
+  In front of you, you see two caves.
+    In one cave, the dragon is friendly and will share his treasure with you.
+    The other dragon is greedy and hungry, and will eat you on sight.
+
+  Which cave will you go into? (1 or 2)
+  1
+  You approach the cave....
+  It is dark and spooky....
+  A large dragon jumps out in front of you! He opens his jaws and ....
+
+  Gives his treasure!
+  Do you want to play again? (yes or no)
+
+  #try the codes yourself for better understading
+</pre>
+    <hr>
+
+    <p>Let's code a TicTacToe game</p>
+<pre>
+  #TicTacToe
+  # Global variables
+  game_still_going = True
+  current_player = "X"
+  winner = None
+
+  board = [ "-", "-", "-",
+            "-", "-", "-",
+            "-", "-", "-"
+          ]
+
+  def display_board():
+    print(board[0] +" | "+board[1] +" | " +board[2]) 
+    print(board[3] +" | "+board[4] +" | " +board[5])
+    print(board[6] +" | "+board[7] +" | " +board[8])
+
+
+  def handle_turn(player):
+    print(f"\n{player}'s turn")
+    position = int(input("Enter a number from 1-9: "))
+    position = position-1
+    board[position] = player
+    display_board()    
+
+  def play_game():
+
+    global winner
+    display_board()
+    while game_still_going:
+
+      handle_turn(current_player)
+
+      check_if_game_over()
+
+      flip_player()
+
+      if winner == "X" or winner == "O":
+          print(f"{winner} won!")
+      elif winner == None and game_still_going == False:
+          print("Tie")
+
+
+  def check_if_game_over():
+    check_for_win()
+    check_if_tie()
+
+    return
+
+  def check_for_win():
+    global winner 
+
+    row_winner = check_rows()
+    column_winner = check_colums()
+    diagonal_winner = check_diagonals()
+
+    if row_winner:
+      winner = row_winner
+    elif column_winner:
+      winner = column_winner
+    elif diagonal_winner:
+      winner = diagonal_winner
+
+    return
+
+  def check_rows():
+    global winner 
+
+    row1 = board[0] == board[1] == board[2] != "-"
+    row2 = board[3] == board[4] == board[5] != "-"
+    row3 = board[6] == board[7] == board[8] != "-"
+    
+    if row1 or row2 or row3:
+      game_still_going = False
+
+    if row1:
+        return board[0]
+    elif row2:
+        return board[3]
+    elif row3:
+        return board[6]
+    
+       return
+
+def check_colums():
+    global winner 
+
+    column1 = board[0] == board[3] == board[6] != "-"
+    column2 = board[1] == board[4] == board[7] != "-"
+    column3 = board[2] == board[5] == board[8] != "-"
+    
+    if column1 or column2 or column3:
+        game_still_going = False
+
+    if column1:
+        return board[0]
+    elif column2:
+        return board[1]
+    elif column3:
+        return board[2]
+    
+    return
+
+def check_diagonals():
+    global winner 
+
+    diagonal1 = board[0] == board[4] == board[8] != "-"
+    diagonal2 = board[6] == board[4] == board[2] != "-"
+    
+    if diagonal1 or diagonal2: 
+        game_still_going = False
+
+    if diagonal1:
+        return board[0]
+    elif diagonal2:
+        return board[6]  
+    
+    return
+    
+
+  def check_if_tie():
+    global game_still_going
+
+    if "-" not in board:
+        game_still_going = False
+
+    return
+
+  def flip_player():
+    global current_player
+
+    if current_player == "X":
+        current_player = "O"
+
+    elif current_player == "O":
+        current_player = "X"
+
+  play_game()
+#Game logic
+# board
+# display board
+# play game
+# handle turn
+# check if game over
+    #check if win
+        # check rows
+        # check columns 
+        # check diagonals
+    # check if tie
+# flip player
+</pre>
+    <p>Output</p>
+<pre>
+- | - | -
+- | - | -
+- | - | -
+
+X's turn
+Enter a number from 1-9: 1
+X | - | -
+- | - | -
+- | - | -
+
+O's turn
+Enter a number from 1-9: 4
+X | - | -
+O | - | -
+- | - | -
+
+X's turn
+Enter a number from 1-9: 2
+X | X | -
+O | - | -
+- | - | -
+
+O's turn
+Enter a number from 1-9: 3
+X | X | O
+O | - | -
+- | - | -
+
+X's turn
+Enter a number from 1-9: 5
+X | X | O
+O | X | -
+- | - | -
+
+O's turn
+Enter a number from 1-9: 8
+X | X | O
+O | X | -
+- | O | -
+
+X's turn
+Enter a number from 1-9: 6
+X | X | O
+O | X | X
+- | O | -
+
+O's turn
+Enter a number from 1-9: 7
+X | X | O
+O | X | X
+O | O | -
+
+X's turn
+Enter a number from 1-9: 9
+X | X | O
+O | X | X
+O | O | X
+X won!
+
+#try the codes yourself for better understading
+</pre>
+
+
+    </div>
+
+    <div class="sidebar" style="margin-right: 50px;">
+        <div class="post">
+            <h2 class="post-title">What is Python</h2>
+    
+            <p class="post-text">Introduction to Python and why you should learn the Python language</p>
+    
+            <a href="homepage.html">Home</a>
+             
+        </div>
+
+        <div class="post">
+            <h2 class="post-title">Installation Process</h2>
+    
+            <p class="post-text">How to get python installed on your machine</p>
+    
+            <a href="installation.html">Installation</a>
+             
+        </div>	
+     
+        <div class="post">
+            <h2 class="post-title">The basics of Python</h2>
+    
+            <p class="post-text">The basics of python that you need to know to get you started.</p>
+    
+            <a href="basics.html">Python Basics</a>
+        </div>
+    
+        <div class="post">
+            <h2 class="post-title">Flow Control</h2>
+    
+            <p class="post-text">Flow Control statements that will help you break out of Loops and many more</p>
+    
+            <a href="flowcontrol.html">Flow Control</a>
+        </div>
+    
+        <div class="post">
+            <h2 class="post-title">Functions 1</h2>
+    
+            <p class="post-text">Functions in Python</p>
+    
+            <a href="functions.html">Functions</a>
+        </div>
+    
+        <div class="post">
+            <h2 class="post-title">Python Lists</h2>
+    
+            <p class="post-text">List is one of the most used Data Structure in Python.Learn how to use it very well</p>
+    
+            <a href="lists.html">Lists</a>
+        </div>
+    
+        <div class="post">
+            <h2 class="post-title">Python Dictionaries and Structuring of Data</h2>
+    
+            <p class="post-text">Data Structure in Python</p>
+    
+            <a href="dictionaries.html">Dictionaries and Structuring Data</a>
+        </div>		
+  
+        <div class="post">
+            <h2 class="post-title">How to Manipulating Strings in Python</h2>
+    
+            <p class="post-text">How to use strings in Python</p>
+    
+            <a href="strings.html">Manipulating Strings</a>
+        </div>	
+  
+        <div class="post">
+            <h2 class="post-title">Functions 2</h2>
+    
+            <p class="post-text">Built-In Functions</p>
+    
+            <a href="functions2.html">Functions in depth</a>
+        </div>	
+  
+        <div class="post">
+            <h2 class="post-title">Functions 3</h2>
+    
+            <p class="post-text">User Defined Functions</p>
+    
+            <a href="functions3.html">Functions in depth</a>
+        </div>
+          
+        <div class="post">
+            <h2 class="post-title">Trial Questions</h2>
+    
+            <p class="post-text">Question and Answers that will help improve and apply the knowledge you've acquired so far</p>
+    
+            <a href="questions_answers.html">Questions and Answers</a>
+        </div>	
+  
+        <div class="post">
+            <h2 class="post-title">Way Forward</h2>
+    
+            <p class="post-text">What to do after this beginner crash course</p>
+    
+            <a href="wayforward.html">Way Forward</a>
+        </div>	
+
+      </div>
+
+
+  </div>
+
+        
+  
+  
+    <div class="footer">
+      <p style="text-align: center;">Copyright © 2021 - (Gibson)</p>
+      
+    </div>
+  
+  <!-- jQuery and JS bundle w/ Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  <script src="../Js/bootstrap.bundle.min.js" ></script>
+  
+
+
+
+
+
+
+
+</body>
+</html>

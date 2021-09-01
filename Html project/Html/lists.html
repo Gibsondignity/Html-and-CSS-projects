@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="../Css/bootstrap.min.css">
+    
+
+    <link rel="stylesheet" href="../Css/style.css">
+    <link rel="stylesheet" href="../Css/main.css"> 
+
+    <title>Python Beginner Course</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-dark bg-primary"> 
+      
+        <a class="navbar-brand" href="homepage.html">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+
+
+<div id="main">
+
+    <div class="container">
+
+        <h1>Python List</h1>
+
+        <p>In this tutorial, we'll learn everything about Python lists, how they are created, slicing of a list, adding or removing elements from them and so on.
+
+            Python offers a range of compound data types often referred to as sequences. List is one of the most frequently used and very versatile data types used in Python.
+        </p>
+
+        <h2>How to create a list?</h2>
+        <p>In Python programming, a list is created by placing all the items (elements) inside square brackets [], separated by commas.</p>
+
+        <p>It can have any number of items and they may be of different types (integer, float, string etc.).</p>
+
+<pre>
+
+ # empty list
+ my_list = []
+
+ # list of integers
+ my_list = [1, 2, 3]
+
+ # list with mixed data types
+ my_list = [1, "Hello", 3.4]
+
+</pre>
+        <p>A list can also have another list as an item. This is called a nested list.</p>
+
+<pre>
+ # nested list
+ my_list = ["mouse", [8, 4, 6], ['a']]
+
+</pre><br>
+
+        <h2>Access List Elements</h2>
+        <p>There are various ways in which we can access the elements of a list.</p>
+
+        <h3>List Index</h3>
+        <p>We can use the index operator [] to access an item in a list. In Python, indices start at 0. So, a list having 5 elements will have an index from 0 to 4.</p>
+
+        <p>Trying to access indexes other than these will raise an <b>IndexError.</b> The index must be an integer. We can't use float or other types, this will result in <b>TypeError.</b></p>
+
+        <p>Nested lists are accessed using nested indexing.</p>
+
+<pre>
+
+ # List indexing
+
+ my_list = ['p', 'r', 'o', 'b', 'e']
+
+ # Output: p
+ print(my_list[0])
+
+ # Output: o
+ print(my_list[2])
+
+ # Output: e
+ print(my_list[4])
+
+ # Nested List
+ n_list = ["Happy", [2, 0, 1, 5]]
+
+ # Nested indexing
+ print(n_list[0][1])
+
+ print(n_list[1][3])
+
+ # Error! Only integer can be used for indexing
+ print(my_list[4.0])
+
+</pre>
+        <p>Output</p>
+
+<pre>
+ p
+ o
+ e
+ a
+ 5
+ Traceback (most recent call last):
+ File "<string>", line 21, in <module>
+ TypeError: list indices must be integers or slices, not float
+</pre>
+
+        <h3>Negative indexing</h3>
+        <p>Python allows negative indexing for its sequences. The index of -1 refers to the last item, -2 to the second last item and so on.</p>
+<pre>
+
+ # Negative indexing in lists
+ my_list = ['p','r','o','b','e']
+
+ print(my_list[-1])
+
+ print(my_list[-5])
+
+</pre>
+        <p>When we run the above program, we will get the following output:</p>
+
+<pre>
+
+ e
+ p
+
+</pre><br>
+
+        <h3>How to slice lists in Python?</h3>
+        <p>We can access a range of items in a list by using the slicing operator :(colon).</p>
+<pre>
+
+ # List slicing in Python
+
+ my_list = ['p','r','o','g','r','a','m','i','z']
+
+ # elements 3rd to 5th
+ print(my_list[2:5])
+
+ # elements beginning to 4th
+ print(my_list[:-5])
+
+ # elements 6th to end
+ print(my_list[5:])
+
+ # elements beginning to end
+ print(my_list[:])
+
+</pre>
+        <p>Output</p>
+
+<pre>
+['o', 'g', 'r']
+['p', 'r', 'o', 'g']
+['a', 'm', 'i', 'z']
+['p', 'r', 'o', 'g', 'r', 'a', 'm', 'i', 'z']
+</pre>
+
+        <p>Slicing can be best visualized by considering the index to be between the elements as shown below. So if we want to access a range, we need two indices that will slice that portion from the list.</p>
+
+        <img src="../Images/element-slicling.webp" alt="Image slicing"><br><br>
+
+        <h2>Add/Change List Elements</h2>
+        <p>
+            Lists are mutable, meaning their elements can be changed unlike string or tuple.
+            We can use the assignment operator <b>=</b> to change an item or a range of items.
+        </p>
+<pre>
+
+ # Correcting mistake values in a list
+ odd = [2, 4, 6, 8]
+
+ # change the 1st item    
+ odd[0] = 1    
+
+ print(odd)
+
+ # change 2nd to 4th items
+ odd[1:4] = [3, 5, 7]  
+
+print(odd)   
+
+</pre>
+        <p>Output</p>
+<pre>
+[1, 4, 6, 8]
+[1, 3, 5, 7]
+</pre><br>
+
+
+<p>We can add one item to a list using the <b>append()</b> method or add several items using <b>extend()</b> method.</p>
+
+<pre>
+
+ # Appending and Extending lists in Python
+ odd = [1, 3, 5]
+
+ odd.append(7)
+
+ print(odd)
+
+ odd.extend([9, 11, 13])
+
+ print(odd)
+
+</pre>
+        <p>Output</p>
+
+<pre>
+[1, 3, 5, 7]
+[1, 3, 5, 7, 9, 11, 13]
+
+</pre>
+
+<p>We can also use <b>+</b> operator to combine two lists. This is also called concatenation.</p>
+
+<p>The <b>*</b> operator repeats a list for the given number of times.</p>
+
+<pre>
+
+ # Concatenating and repeating lists
+ odd = [1, 3, 5]
+
+ print(odd + [9, 7, 5])
+
+ print(["re"] * 3)
+
+</pre>
+        <p>Output</p>
+
+<pre>
+[1, 3, 5, 9, 7, 5]
+['re', 're', 're']
+
+</pre>
+
+<p>Furthermore, we can insert one item at a desired location by using the method insert() or insert multiple items by squeezing it into an empty slice of a list.</p>
+
+<pre>
+
+ # Demonstration of list <b>insert()</b> method
+ odd = [1, 9]
+ odd.insert(1,3)
+
+ print(odd)
+
+ odd[2:2] = [5, 7]
+
+ print(odd)
+
+</pre>
+
+        <p>Output</p>
+<pre>
+[1, 3, 9]
+[1, 3, 5, 7, 9]
+</pre><br>
+
+
+        <h2>Delete/Remove List Elements</h2>
+
+        <p>We can delete one or more items from a list using the keyword <b>del</b>. It can even delete the list entirely.</p>
+
+<pre>
+
+ # Deleting list items
+ my_list = ['p', 'r', 'o', 'b', 'l', 'e', 'm']
+
+ # delete one item
+ del my_list[2]
+
+ print(my_list)
+
+ # delete multiple items
+ del my_list[1:5]
+
+ print(my_list)
+
+ # delete entire list
+ del my_list
+
+ # Error: List not defined
+ print(my_list)
+
+</pre>
+        <p>Output</p>
+
+<pre>
+['p', 'r', 'b', 'l', 'e', 'm']
+['p', 'm']
+Traceback (most recent call last):
+  File "<string>", line 18, in <module>
+NameError: name 'my_list' is not defined
+</pre>
+
+<p>We can use <b>remove()</b> method to remove the given item or <b>pop()</b> method to remove an item at the given index.</p>
+
+<p>The <b>pop()</b> method removes and returns the last item if the index is not provided. This helps us implement lists as stacks (first in, last out data structure).</p>
+
+<p>We can also use the <b>clear()</b> method to empty a list.</p>
+
+<pre>
+
+ my_list = ['p','r','o','b','l','e','m']
+ my_list.remove('p')
+
+ # Output: ['r', 'o', 'b', 'l', 'e', 'm']
+ print(my_list)
+
+ # Output: 'o'
+ print(my_list.pop(1))
+
+ # Output: ['r', 'b', 'l', 'e', 'm']
+ print(my_list)
+
+ # Output: 'm'
+ print(my_list.pop())
+
+ # Output: ['r', 'b', 'l', 'e']
+ print(my_list)
+
+ my_list.clear()
+
+ # Output: []
+ print(my_list)
+
+</pre>
+
+<p>Output</p>
+
+<pre>
+
+['r', 'o', 'b', 'l', 'e', 'm']
+o
+['r', 'b', 'l', 'e', 'm']
+m
+['r', 'b', 'l', 'e']
+[]
+
+</pre>
+
+        <p>Finally, we can also delete items in a list by assigning an empty list to a slice of elements.</p>
+
+<pre>
+
+ >>> my_list = ['p','r','o','b','l','e','m']
+ >>> my_list[2:3] = []
+ >>> my_list
+ ['p', 'r', 'b', 'l', 'e', 'm']
+ >>> my_list[2:5] = []
+ >>> my_list
+ ['p', 'r', 'm']
+
+</pre><br>
+        <h2>Python List Methods</h2>
+        <p>Methods that are available with list objects in Python programming are tabulated below.</p>
+
+        <p>They are accessed as list.method(). Some of the methods have already been used above.</p>
+
+        <h4>Python List Methods</h4>
+        <ul>
+            <p><li>append() - Add an element to the end of the list</p></li>
+            <p><li>extend() - Add all elements of a list to the another list</p></li>
+            <p><li>insert() - Insert an item at the defined index</p></li>
+            <p><li>remove() - Removes an item from the list</p></li>
+            <p><li>pop() - Removes and returns an element at the given index</p></li>
+            <p><li>clear() - Removes all items from the list</p></li>
+            <p><li>index() - Returns the index of the first matched item</p></li>
+            <p><li>count() - Returns the count of the number of items passed as an argument</p></li>
+            <p><li>sort() - Sort items in a list in ascending order</p></li>
+            <p><li>reverse() - Reverse the order of items in the list</p></li>
+            <p><li>copy() - Returns a shallow copy of the list</p></li>
+        </ul>
+
+
+        <h4>Some examples of Python list methods:</h4>
+
+<pre>
+
+ # Python list methods
+ my_list = [3, 8, 1, 6, 0, 8, 4]
+
+ # Output: 1
+ print(my_list.index(8))
+
+ # Output: 2
+ print(my_list.count(8))
+
+ my_list.sort()
+
+ # Output: [0, 1, 3, 4, 6, 8, 8]
+ print(my_list)
+
+ my_list.reverse()
+
+ # Output: [8, 8, 6, 4, 3, 1, 0]
+ print(my_list)
+
+</pre>
+        <p>Output</p>
+
+<pre>
+1
+2
+[0, 1, 3, 4, 6, 8, 8]
+[8, 8, 6, 4, 3, 1, 0]
+
+</pre><br>
+
+
+        <h2>List Comprehension: Elegant way to create Lists</h2>
+
+            <p>List comprehension is an elegant and concise way to create a new list from an existing list in Python.</p>
+
+            <p>A list comprehension consists of an expression followed by for statement inside square brackets.</p>
+
+            <p>Here is an example to make a list with each item being increasing power of 2.</p>
+
+<pre>
+
+pow2 = [2 ** x for x in range(10)]
+print(pow2)
+</pre>
+
+        <p>Output</p>
+<pre>
+
+[1, 2, 4, 8, 16, 32, 64, 128, 256, 512]
+</pre>
+
+        <p>This code is equivalent to:</p>
+
+<pre>
+pow2 = []
+for x in range(10):
+   pow2.append(2 ** x)
+
+</pre>
+        <p>A list comprehension can optionally contain more for or if statements. An optional if statement can filter out items for the new list. Here are some examples.</p>
+
+<pre>
+>>> pow2 = [2 ** x for x in range(10) if x > 5]
+>>> pow2
+[64, 128, 256, 512]
+>>> odd = [x for x in range(20) if x % 2 == 1]
+>>> odd
+[1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+>>> [x+y for x in ['Python ','C '] for y in ['Language','Programming']]
+['Python Language', 'Python Programming', 'C Language', 'C Programming']
+
+</pre><br>
+
+        <hr>
+
+        <h2>Other List Operations in Python</h2>
+        <h4>List Membership Test</h4>
+
+        <p>We can test if an item exists in a list or not, using the keyword in.</p>
+
+<pre>
+my_list = ['p', 'r', 'o', 'b', 'l', 'e', 'm']
+
+# Output: True
+print('p' in my_list)
+
+# Output: False
+print('a' in my_list)
+
+# Output: True
+print('c' not in my_list)
+
+</pre>
+
+        <p>Output</p>
+<pre>
+True
+False
+True
+</pre>
+
+        <h4>Iterating Through a List</h4>
+        <p>Using a for loop we can iterate through each item in a list.</p>
+
+<pre>
+for fruit in ['apple','banana','mango']:
+    print("I like",fruit)
+
+</pre>
+
+        <p>Output</p>
+<pre>
+
+I like apple
+I like banana
+I like mango
+
+</pre>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+    <div class="sidebar" style="margin-right: 50px;">
+        <div class="post">
+                <h2 class="post-title">What is Python</h2>
+        
+                <p class="post-text">Introduction to Python and why you should learn the Python language</p>
+        
+                <a href="homepage.html">Home</a>
+                 
+            </div>
+    
+            <div class="post">
+                <h2 class="post-title">Installation Process</h2>
+        
+                <p class="post-text">How to get python installed on your machine</p>
+        
+                <a href="installation.html">Installation</a>
+                 
+            </div>	
+         
+            <div class="post">
+                <h2 class="post-title">The basics of Python</h2>
+        
+                <p class="post-text">The basics of python that you need to know to get you started.</p>
+        
+                <a href="basics.html">Python Basics</a>
+            </div>
+        
+            <div class="post">
+                <h2 class="post-title">Flow Control</h2>
+        
+                <p class="post-text">Flow Control statements that will help you break out of Loops and many more</p>
+        
+                <a href="flowcontrol.html">Flow Control</a>
+            </div>
+        
+            <div class="post">
+                <h2 class="post-title">Functions 1</h2>
+        
+                <p class="post-text">Functions in Python</p>
+        
+                <a href="functions.html">Functions</a>
+            </div>
+        
+            <div class="post">
+                <h2 class="post-title">Python Lists</h2>
+        
+                <p class="post-text">List is one of the most used Data Structure in Python.Learn how to use it very well</p>
+        
+                <a href="lists.html">Lists</a>
+            </div>
+        
+            <div class="post">
+                <h2 class="post-title">Python Dictionaries and Structuring of Data</h2>
+        
+                <p class="post-text">Data Structure in Python</p>
+        
+                <a href="dictionaries.html">Dictionaries and Structuring Data</a>
+            </div>		
+      
+            <div class="post">
+                <h2 class="post-title">How to Manipulating Strings in Python</h2>
+        
+                <p class="post-text">How to use strings in Python</p>
+        
+                <a href="strings.html">Manipulating Strings</a>
+            </div>	
+      
+            <div class="post">
+                <h2 class="post-title">Functions 2</h2>
+        
+                <p class="post-text">Built-In Functions</p>
+        
+                <a href="functions2.html">Functions in depth</a>
+            </div>	
+      
+            <div class="post">
+                <h2 class="post-title">Functions 3</h2>
+        
+                <p class="post-text">User Defined Functions</p>
+        
+                <a href="functions3.html">Functions in depth</a>
+            </div>
+              
+            <div class="post">
+                <h2 class="post-title">Trial Questions</h2>
+        
+                <p class="post-text">Question and Answers that will help improve and apply the knowledge you've acquired so far</p>
+        
+                <a href="questions_answers.html">Questions and Answers</a>
+            </div>	
+      
+            <div class="post">
+                <h2 class="post-title">Way Forward</h2>
+        
+                <p class="post-text">What to do after this beginner crash course</p>
+        
+                <a href="wayforward.html">Way Forward</a>
+            </div>	
+
+      </div>
+
+
+  </div>
+
+        
+  
+  
+    <div class="footer">
+      <p style="text-align: center;">Copyright © 2021 - (Gibson)</p>
+      
+    </div>
+  
+  <!-- jQuery and JS bundle w/ Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  <script src="../Js/bootstrap.bundle.min.js" ></script>
+  
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="../Css/bootstrap.min.css">
+    
+
+    <link rel="stylesheet" href="../Css/style.css">
+    <link rel="stylesheet" href="../Css/main.css"> 
+
+    <title>Python Beginner Course</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-dark bg-primary"> 
+      
+        <a class="navbar-brand" href="homepage.html">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+
+
+<div id="main">
+
+    <div class="container">
+
+        <h1>The basics of python that every beginner should know</h1><br>
+        
+        <video controls poster="../Images/install_python_windows_shell.png">
+            
+            <source src="../Videos/writing paragraphs of code.webm" >
+        </video> 
+    
+
+        <h3>Python interactive shell:</h3>
+
+<pre>
+Python 3.8.2 (tags/v3.8.2:7b3ab59, Feb 25 2020, 22:45:29) [MSC v.1916 32 bit (In
+tel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+</pre><br>
+
+        <h6>Assigning Values to Variables</h6>
+        <p>
+        Python is a <b>dynamically typed language.</b> This means that you don't even need to declare the type of variable while assigning a value to a variable in python. 
+        Other programming languages like C++, C, JavaSccript, Java, among others, there is a rigorous decclaration of variables before assigning values to them. 
+        We use the equal to sign (=) to assign values to variables. 
+        </p>
+
+<pre>
+num1 = 100              # An integer number
+num2 = 100.00           # A floating point number 
+name = "Gibson"         # A string 
+
+print(num1)
+print(num2)
+print(name)
+</pre>
+        <p>
+        Here we assigned 100 to num1, 100.00 to num2, and Gibson to name. The <strong>print()</strong> function prints the specified message to the screen, or other standard output device. 
+        The message can be a string, or any other object, the object will be converted into a string before written to the screen. 
+        </p>
+        <strong>Output:</strong>
+<pre>
+100
+100.00
+Gibson
+</pre>
+
+        <p>
+        Let's type something into the python interactive shell. <b><i>Follow the steps and type as you see, this will help you to become familiar with the codes.</i></b>
+        Everything we are doing here is jsut the basics, we will dive deep into it later in the course.
+        
+        </p><br>
+
+<pre >
+Python 3.8.2 (tags/v3.8.2:7b3ab59, Feb 25 2020, 22:45:29) [MSC v.1916 32 bit (In
+tel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> x = 40
+>>> print(f"x is an integer: {x}")
+x is an integer: 40
+
+>>> y = 2.345
+>>> print(f"y is a double integer: {y}")
+y is a double integer: 2.345
+
+>>> z = True
+>>> print(f"z is a boolean value: {z}")
+z is a boolean value: True
+
+>>> a = "Gibson"
+>>> print(f"a is a string: {a}")
+a is a string: Gibson
+>>>_
+</pre><br>
+    
+        <h3>Data Types</h3>
+
+        <p>
+            Data types are the classification or categorization of data items. The data stored in memory can be of many types. For example, a person's age is stored as a numeric value and his or her address is stored as alphanumeric
+            characters. Python has various standard data types that are used to define the operations possible on them and the storage method for each
+            of them. <br>
+        </p>    
+
+        <strong>Common Data Types </strong>
+        <table>
+            <tr>
+                <td>Integers</td>
+                <td>-2, -1, 0, 1, 2, 3, 4, 5</td>
+            </tr>
+            <tr>
+                <td>Floating-point numbers</td>
+                <td>-1.25, -1.0, --0.5, 0.0, 0.5, 1.0, 1.25</td>
+            </tr>
+            <tr>
+                <td>Strings</td>
+                <td>'a', 'aa', 'aaa', 'Hello!', '11 cats'</td>
+            </tr>
+        </table>  <br> 
+        
+        <h4>Standard Data Types</h4>
+        <h6>Python has five standard or built-in data types</h6>
+            <ul>
+                <li>Number</li>
+                <li>Sequence Type</li>
+                <li>Boolean</li>
+                <li>Set</li>
+                <li>Dictionary</li>
+            </ul> <br>
+        
+    
+        <h3>Number</h3>
+            <p>
+                Number data type in python represent the data which has numeric value. Numeric value can be integer, floating number or complex numbers
+                These values are represented as int, float or double and complex class in python.
+
+                <dl>
+                    <dt>Integers</dt>
+                    <dd>
+                        This value is represented by <strong>int</strong> class. It contains positive or negative whole numbers (exclude fraction or decimal).
+                        In python there is no limit to how long an integer value can be. 
+                    </dd>
+
+                    <dt>Float</dt>
+                    <dd>
+                        This value is represented by <strong>float</strong> class. It is a real number with floating point representation. It is specified by a decimal
+                        point. Optionally, the character e or E followed by a positive or negative integer may be appended to specifiy scientific notation.
+                    </dd>
+
+                    
+                </dl>
+
+<pre>
+Python 3.8.2 (tags/v3.8.2:7b3ab59, Feb 25 2020, 22:45:29) [MSC v.1916 32 bit (In
+tel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+>>> x = 8
+>>> print("Type of x: ", type(x))
+Type of x:  class 'int'>
+>>>   
+>>> y = 10.23
+>>> print("Type of y: ", type(y))
+Type of y:  class 'float'>
+>>>
+
+      
+</pre>            
+        </p>
+        
+        <p>The <strong>type()</strong> function is used to determine the type of data type. </p><br>
+
+
+
+
+    <p>Let's do some simple calculator. This calculator accepts any two interger numbers and performs simple addition.</p> 
+<pre>
+>>> num1 = input("Enter your first number: ")
+Enter your number: 2
+>>> num2 = input("Enter your  second number: ")
+Enter your  second number: 2
+>>> result = int(num1) + int(num2)
+>>> print(result)
+4
+>>>
+</pre>
+
+
+        <table> 
+            <tr>
+                <th>Operator</th>
+                <th>Operation</th>
+                <th>Example</th>
+                <th>Evaluates to</th>
+            </tr>
+            <tr>
+                <td> + </td>
+                <td> Addition </td>
+                <td>  2 + 2 </td>
+                <td> 4 </td>
+            </tr>
+            <tr>
+                <td> * </td>
+                <td> Multiplication </td>
+                <td> 3 * 5 </td>
+                <td> 15 </td>
+            </tr>
+            <tr>
+                <td> / </td>
+                <td> Division </td>
+                <td> 22 / 8 </td>
+                <td> 2.75 </td>
+            </tr>
+            <tr>
+                <td> - </td>
+                <td> Subtraction </td>
+                <td>  5 - 2 </td>
+                <td> 3 </td>
+            </tr>
+            <tr>
+                <td> ** </td>
+                <td> Exponent </td>
+                <td> 2 ** 3 </td>
+                <td> 8 </td>
+            </tr>
+            <tr>
+                <td> % </td>
+                <td> Modulus/remainder </td>
+                <td> 22 % 8 </td>
+                <td> 6</td>
+            </tr>
+            <tr>
+                <td> // </td>
+                <td> Truncated division </td>
+                <td> 22 // 8 </td>
+                <td> 2 </td>
+            </tr>
+
+        </table><br><br>
+
+
+        <h3>Sequence Type</h3>
+        <p>In Python, sequence is the ordered collection of similar or different data types. Sequences allows to store multiple values in an organized and efficient fashion. There are several sequence types in Python 
+
+        <ul>
+            <li>String</li>
+            <li>List</li>
+            <li>Tuple</li>
+        </ul>
+        </p>
+
+        <h3>Strings</h3>
+        <strong>Creating String</strong>
+        <p>Strings in Python can be created using single quotes or double quotes or even triple quotes.</p>
+
+        <p>
+        Let's do some MADLIP Game. I recommend you type this in the Integrated Development Environment (IDE) we downloaded during the installation process for better understanding
+        </p>
+
+<pre>
+name = input("Enter your name: ")
+home_town = input("Enter your  home town: ")
+my_stay = input("Enter where you stay now: ")
+age = input("Enter your age: ")
+color = input("Enter your body color: ")
+nose_shape = input("Enter your nose shape: ")
+
+print(f"My name is {name}")
+print(f"I come from {home_town} but stay at {my_stay }")
+print(f"I am  {age} years of age")
+print(f"I am  {color} in color")
+print(f"I have {nose_shape} nose!")
+</pre>
+
+        <p>
+        Here we are taking input from the user using the <strong>input()</strong> function. The <strong>input()</strong> function presents a prompt to the user
+        and waits for the user's responds. The input from the user is read as a string and is assigned to a variable.The python interpreter then insert the input from the user to replace the variables in the parenthesis and 
+        then print out the actual input entered by the user. The <strong>"f"</strong> before the string and  <strong>{}</strong> in the print function are called f-Strings, a new and improved way to format Strings in python
+        </p>
+    <strong>Output:</strong>
+<pre>
+Enter your name: Gibson
+Enter your  home town: Bekwai
+Enter where you stay now: Abeka-Lapaz
+Enter your age: 19
+Enter your body color: dark
+Enter your nose shape: snub
+    
+My name is Gibson
+I come from Bekwai but stay at Abeka-Lapaz
+I am  19 years of age
+I am  dark in color
+I have snub nose!
+</pre><br><br>
+
+    </div>
+
+
+
+
+
+    <div class="sidebar" style="margin-right: 50px;">
+        <div class="post">
+            <h2 class="post-title">What is Python</h2>
+    
+            <p class="post-text">Introduction to Python and why you should learn the Python language</p>
+    
+            <a href="homepage.html">Home</a>
+             
+        </div>
+
+        <div class="post">
+            <h2 class="post-title">Installation Process</h2>
+    
+            <p class="post-text">How to get python installed on your machine</p>
+    
+            <a href="installation.html">Installation</a>
+             
+        </div>	
+     
+        <div class="post">
+            <h2 class="post-title">The basics of Python</h2>
+    
+            <p class="post-text">The basics of python that you need to know to get you started.</p>
+    
+            <a href="basics.html">Python Basics</a>
+        </div>
+    
+        <div class="post">
+            <h2 class="post-title">Flow Control</h2>
+    
+            <p class="post-text">Flow Control statements that will help you break out of Loops and many more</p>
+    
+            <a href="flowcontrol.html">Flow Control</a>
+        </div>
+    
+        <div class="post">
+            <h2 class="post-title">Functions 1</h2>
+    
+            <p class="post-text">Functions in Python</p>
+    
+            <a href="functions.html">Functions</a>
+        </div>
+    
+        <div class="post">
+            <h2 class="post-title">Python Lists</h2>
+    
+            <p class="post-text">List is one of the most used Data Structure in Python.Learn how to use it very well</p>
+    
+            <a href="lists.html">Lists</a>
+        </div>
+    
+        <div class="post">
+            <h2 class="post-title">Python Dictionaries and Structuring of Data</h2>
+    
+            <p class="post-text">Data Structure in Python</p>
+    
+            <a href="dictionaries.html">Dictionaries and Structuring Data</a>
+        </div>		
+  
+        <div class="post">
+            <h2 class="post-title">How to Manipulating Strings in Python</h2>
+    
+            <p class="post-text">How to use strings in Python</p>
+    
+            <a href="strings.html">Manipulating Strings</a>
+        </div>	
+  
+        <div class="post">
+            <h2 class="post-title">Functions 2</h2>
+    
+            <p class="post-text">Built-In Functions</p>
+    
+            <a href="functions2.html">Functions in depth</a>
+        </div>	
+  
+        <div class="post">
+            <h2 class="post-title">Functions 3</h2>
+    
+            <p class="post-text">User Defined Functions</p>
+    
+            <a href="functions3.html">Functions in depth</a>
+        </div>
+          
+        <div class="post">
+            <h2 class="post-title">Trial Questions</h2>
+    
+            <p class="post-text">Question and Answers that will help improve and apply the knowledge you've acquired so far</p>
+    
+            <a href="questions_answers.html">Questions and Answers</a>
+        </div>	
+  
+        <div class="post">
+            <h2 class="post-title">Way Forward</h2>
+    
+            <p class="post-text">What to do after this beginner crash course</p>
+    
+            <a href="wayforward.html">Way Forward</a>
+        </div>	
+      </div>
+
+
+  </div>
+
+        
+  
+  
+    <div class="footer">
+      <p style="text-align: center;">Copyright © 2021 - (Gibson)</p>
+      
+    </div>
+  
+  <!-- jQuery and JS bundle w/ Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  <script src="../Js/bootstrap.bundle.min.js" ></script>
+  
+
+
+
+
+
+
+
+</body>
+</html>

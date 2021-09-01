@@ -1,0 +1,109 @@
+
+img, video {
+	width: 500px;
+	height: 300px;
+	transition: 0.5s all;
+}
+
+
+img:hover {
+	height: 350px;
+	width: 600px;
+}
+
+
+
+p {
+	font-family: 'Lato', sans-serif;
+	font-size: large;
+	margin: 5;
+}
+
+li {
+	font-family: 'Lato', sans-serif;
+}
+
+a {
+	font-family: 'Lato', sans-serif;
+	margin-left: 5px;
+	margin-right: 5px;
+	text-decoration: none;
+	color: rgb(70, 137, 244);
+	transition: 0.5s color;
+	
+}
+
+h1 {
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+h2 {
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+p dl dd{
+	margin-top: 5px;
+}
+
+table {
+	border-spacing: 4px;
+}
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+th, td {
+	padding: 4px;
+}
+
+pre {
+	border: solid 1px green;
+	padding-bottom: 5px;
+	background-color: whitesmoke;
+	padding-left: 7px;
+}
+
+aside{
+	text-align: center;
+	border: solid 1px rgb(211, 211, 241);
+	width: 70%;
+	background-color: rgb(162, 193, 240);
+	padding: 8px;
+}
+
+dl {
+	display: block;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	margin-left: 0;
+	margin-right: 0;
+  }
+
+table tr td{
+	font-family: 'Lato', sans-serif;
+	font-size: large;
+	margin: 5;
+}
+
+.hidden{
+	
+	opacity: 0.02;
+}
+
+.hidden:hover{
+	opacity: 1;
+}
+
+
+
+@keyframes fade-in {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+
+
+
+
+
+

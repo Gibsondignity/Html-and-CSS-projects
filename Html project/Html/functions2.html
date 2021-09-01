@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="../Css/bootstrap.min.css">
+    
+
+    <link rel="stylesheet" href="../Css/style.css">
+    <link rel="stylesheet" href="../Css/main.css"> 
+
+    <title>Python Beginner Course</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-dark bg-primary"> 
+      
+        <a class="navbar-brand" href="homepage.html">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+
+
+<div id="main">
+
+    <div class="container">
+
+        <h1>Python Built-In Functions</h1>
+
+<p>
+Python has a number of built-in functions, which are an integral part of the Python interpreter. We can't look at all of them because many are related to features of the language that we haven't addressed yet.
+
+One of the built-in mathematical functions will have to wait for complete coverage until we've introduced the more complex data types, specifically tuples, in Chapter 13, Tuples . The divmod ( x , y ) function returns a tuple object with the quotient and remainder in division.
+</p>
+
+
+  <h2>Built-In Math Functions</h2>
+  <p>The bulk of the math functions are in a separate module, called math, which we will cover in the section called “The math Module”. The formal definitions of mathematical built-in functions are provided below.</p>
+
+  <dl>
+    <dt>abs ( number ) → number</dt>
+      <dd>Return the absolute value of the argument, | x |.</dd>
+
+    <dt>pow ( x , y , [ z ]) → number</dt>
+      <dd>Raise x to the y power. If z is present, this is done modulo z , x y % z .</dd>
+
+    <td>round ( number , [ ndigits ]) → float</td>
+      <dd>Round number to ndigits beyond the decimal point.</dd>
+
+    <td>cmp ( x , y ) → integer</td>
+      <dd>Compare x and y , returning a number. If the number is less than 0, then x < y ; if the number is zero, then x == y ; if the number is positive, then x > y .</dd>
+
+  </dl>
+
+  <p>
+    The round ( number , [ ndigits ] ) function rounds a number to the nearest whole number. If the n parameter is given, this is the number of decimal places to round to. If n is positive, this is decimal places to the right of the decimal point. If n is negative, this is the number of places to the left of the decimal point. Examples: round(678.456,2) yields 678.46; round(678.456,-1) yields 680.
+
+    The cmp( x , y ) function is handy for the comparisons used when sorting objects into order. For example, cmp(2,35) yields -1, telling us that the first value is less than the second value.
+  </p>
+
+  <p><b>Python Maths Functions In Display</b></p>
+
+  <p>The <b>min()</b> and <b>max()</b> functions can be used to find the lowest or highest value in an iterable:</p>
+<pre>
+ x = min(5, 10, 25)
+ y = max(5, 10, 25)
+
+ print(x)
+ print(y)
+
+ #output
+ 5
+ 25
+</pre>
+
+    <p>The <b>abs()</b> function returns the absolute (positive) value of the specified number:</p>
+<pre>
+ x = abs(-7.25)
+ print(x)
+
+ #output
+ 7.25
+</pre>
+
+    <p>The pow(x, y) function returns the value of x to the power of y (x<sup>y</sup>). 
+      Return the value of 4 to the power of 3 (same as 4 * 4 * 4):
+    </p>
+<pre>
+ x = pow(4, 3)
+ print(x)
+
+ #output
+ 64
+</pre>
+    
+    <br>
+    <p><b>Built-In Math Model</b></p>
+    <p><b>Square Root</b></p>
+<pre>
+ import math
+ math.sqrt(4)
+</pre>
+
+    <p><b>Floor</b></p>
+<pre>
+ import math
+ data = 21.6
+ print('The floor of 21.6 is:', math.floor(data))
+
+ #output
+ The floor 21.6 is: 21
+</pre>
+
+    <p><b>PI</b></p>
+<pre>
+ import math
+ print('The value of PI:',math.pi)
+
+ #output
+ The value of PI: 3.14159265358
+</pre>
+
+    <p><b>Power of</b></p>
+<pre>
+ import math
+ print(math.pow(2, 3))
+
+ #output
+ 8.0
+</pre>
+
+    <p>The math.ceil() method rounds a number upwards to its nearest integer, and the math.floor() method rounds a number downwards to its nearest integer, and returns the result:</p>
+<pre>
+  import math
+
+  x = math.ceil(1.4)
+  y = math.floor(1.4)
+  
+  print(x) # returns 2
+  print(y) # returns 1
+
+  #output
+  2
+  1
+</pre>
+    <a href="https://www.w3schools.com/python/trypython.asp?filename=demo_math_ceil_floor">Go and try it yourself</a>
+
+    </div>
+
+
+
+
+
+    <div class="sidebar" style="margin-right: 50px;">
+      <div class="post">
+        <h2 class="post-title">What is Python</h2>
+
+        <p class="post-text">Introduction to Python and why you should learn the Python language</p>
+
+        <a href="homepage.html">Home</a>
+         
+    </div>
+
+    <div class="post">
+        <h2 class="post-title">Installation Process</h2>
+
+        <p class="post-text">How to get python installed on your machine</p>
+
+        <a href="installation.html">Installation</a>
+         
+    </div>	
+ 
+    <div class="post">
+        <h2 class="post-title">The basics of Python</h2>
+
+        <p class="post-text">The basics of python that you need to know to get you started.</p>
+
+        <a href="basics.html">Python Basics</a>
+    </div>
+
+    <div class="post">
+        <h2 class="post-title">Flow Control</h2>
+
+        <p class="post-text">Flow Control statements that will help you break out of Loops and many more</p>
+
+        <a href="flowcontrol.html">Flow Control</a>
+    </div>
+
+    <div class="post">
+        <h2 class="post-title">Functions 1</h2>
+
+        <p class="post-text">Functions in Python</p>
+
+        <a href="functions.html">Functions</a>
+    </div>
+
+    <div class="post">
+        <h2 class="post-title">Python Lists</h2>
+
+        <p class="post-text">List is one of the most used Data Structure in Python.Learn how to use it very well</p>
+
+        <a href="lists.html">Lists</a>
+    </div>
+
+    <div class="post">
+        <h2 class="post-title">Python Dictionaries and Structuring of Data</h2>
+
+        <p class="post-text">Data Structure in Python</p>
+
+        <a href="dictionaries.html">Dictionaries and Structuring Data</a>
+    </div>		
+
+    <div class="post">
+        <h2 class="post-title">How to Manipulating Strings in Python</h2>
+
+        <p class="post-text">How to use strings in Python</p>
+
+        <a href="strings.html">Manipulating Strings</a>
+    </div>	
+
+    <div class="post">
+        <h2 class="post-title">Functions 2</h2>
+
+        <p class="post-text">Built-In Functions</p>
+
+        <a href="functions2.html">Functions in depth</a>
+    </div>	
+
+    <div class="post">
+        <h2 class="post-title">Functions 3</h2>
+
+        <p class="post-text">User Defined Functions</p>
+
+        <a href="functions3.html">Functions in depth</a>
+    </div>
+      
+    <div class="post">
+        <h2 class="post-title">Trial Questions</h2>
+
+        <p class="post-text">Question and Answers that will help improve and apply the knowledge you've acquired so far</p>
+
+        <a href="questions_answers.html">Questions and Answers</a>
+    </div>	
+
+    <div class="post">
+        <h2 class="post-title">Way Forward</h2>
+
+        <p class="post-text">What to do after this beginner crash course</p>
+
+        <a href="wayforward.html">Way Forward</a>
+    </div>		
+
+  </div>
+
+</div>
+
+        
+  
+  
+    <div class="footer">
+      <p style="text-align: center;">Copyright © 2021 - (Gibson)</p>
+      
+    </div>
+  
+  <!-- jQuery and JS bundle w/ Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  <script src="../Js/bootstrap.bundle.min.js" ></script>
+  
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="../Css/bootstrap.min.css">
+    
+
+    <link rel="stylesheet" href="../Css/style.css">
+    <link rel="stylesheet" href="../Css/main.css"> 
+
+    <title>Python Beginner Course</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-dark bg-primary"> 
+      
+        <a class="navbar-brand" href="homepage.html">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+
+
+<div id="main">
+
+    <div class="container">
+
+        <h1>Python String format()</h1>
+            <p>String formatting is also known as String interpolation. It is the process of inserting a custom string or variable in predefined text. </p>
+<pre>
+ custom_string = "String formatting"
+ print(f"{custom_string} is a powerful technique")
+ 
+ #output
+ String formatting is a powerful technique
+</pre>
+
+        <p>As a data scientist, you would use it for inserting a title in a graph, show a message or an error, or pass a statement to a function. </p>
+
+        <h3>Methods for formatting</h3>
+        <ul>
+            <li>Positional formatting</li>
+            <li>Formatted string literals</li>
+            <li>Template method</li>
+        </ul>
+
+        <h3>String.Format Method</h3>
+        <p>
+            We put placeholders defined by a pair of curly braces in a text. We call the string dot format method. Then, we pass the desired value into the method. 
+            The method replaces the placeholders using the values in the order of appearance replace by value:
+        </p>
+<pre>
+ 'text{}'.format(value)
+</pre>
+
+        <h3>Positional Formatting</h3>
+        <p>We define a string and insert two placeholders. We pass two strings to the method, which will be passed to get the following output:</p>
+<pre>
+ print("Machine learning provides {} the ability to learn {}".format("systems", "automatically"))
+ 
+ #output
+ Machine learning provides systems the ability to learn automatically
+</pre>
+    <p>
+        We can use variables for both the string and the values passed to the method. In the below example code, we define a string with placeholders and two other variables. 
+        We apply the format method to the string using the two defined variables. The method reads the string and replaces the placeholders with the given values.
+    </p>
+<pre>
+my_string = "{} rely on {} datasets"
+method = "Supervised algorithms"
+condition = "labeled"
+print(my_string.format(method, condition))
+
+#output
+Supervised algorithms rely on labeled datasets
+</pre>
+
+
+        <h3>Reordering Values</h3>
+        <p>In the below example, you add index numbers into the placeholders to reorder values. This affects the order in which the method replaces the placeholders.</p>
+
+        <p>The method replaces them with the values in the given order.</p>
+<pre>
+ print("{} has a friend called {} and a sister called {}". format("Betty", "Linda", "Daisy"))
+
+ #output
+ Betty has a friend called Linda and a sister called Daisy
+</pre>
+
+
+        <p>If we add the index numbers, the replacement order changes accordingly.</p>
+<pre>
+ print("{2} has a friend called {0} and a sister called {1}". format("Betty", "Linda", "Daisy"))
+
+ #output
+ Daisy has a friend called Betty and a sister called Linda
+</pre>
+        <h3>Name Placeholders</h3>
+        <p>We can also introduce keyword arguments that are called by their keyword name.</p>
+
+        <p>
+            In the example code below, we inserted keywords in the placeholders. Then, we call these keywords in the format method.
+             We then assign which variable will be passed for each of them, resulting in the following output.
+        </p>
+<pre>
+ tool="Unsupervised algorithms"
+ goal="patterns"
+ print("{title} try to find {aim} in the dataset".format(title=tool, aim=goal))
+
+ #output
+ Unsupervised algorithms try to find patterns in the dataset
+</pre>
+
+        <p>Let's examine this code below. We have defined a dictionary with keys: tool and goal.</p>
+<pre>
+ my_methods = {"tool": "Unsupervised algorithms", "goal": "patterns"}
+</pre>
+
+        <p>
+            We want to insert their values in a string. Inside the placeholders, we can specify the value associated with the key tool of the variable data using bracket notation. 
+            Data is the dictionary specified in the method, and tool is the key present in that dictionary.
+        </p>
+<pre>
+ print('{data[tool]} try to find {data[goal]} in the dataset'.format(data=my_methods))
+</pre>
+        <p>So, we get the desired output shown below. Be careful! You need to specify the index without using quotes.</p>
+<pre>
+ Unsupervised algorithms try to find patterns in the dataset
+</pre>
+
+        <h3>Format Specifier</h3>
+    <p>
+        We can also specify the format specifies inside curly braces. 
+        This defines how individual values are presented. Here, we’ll use the syntax index colon specifier. 
+        One of the most common format specifiers is float represented by <b>f</b>. In the code, we specify that the value passed with the index 0 will be a float.
+    </p>
+
+<pre>
+print("Only {0:f}% of the {1} produced worldwide is {2}!". format(0.5155675, "data", "analyzed"))
+
+#output
+Only 0.515567% of the data produced worldwide is analyzed!
+</pre>
+        <p>We could also add .2f indicating that we want the float to have two decimals, as seen in the resulting output.</p>
+
+<pre>
+print("Only {0:.2f}% of the {1} produced worldwide is {2}!".format(0.5155675, "data", "analyzed"))
+
+#output
+Only 0.52% of the data produced worldwide is analyzed!
+</pre>
+
+        <h3>Formatting datetime</h3>
+        <p>Python has a module called datetime that allows us to, for example, to get the time and date for today.</p>
+<pre>
+from datetime import datetime
+print(datetime.now())
+
+#output
+2020-08-08 06:28:42.715243
+</pre>
+
+        <p>But since the format returned is very particular, you could use the format specifier such as %y-%m-%d-%h-%m to adjust the format to something more familiar to us!</p>
+
+<pre>
+print("Today's date is {:%Y-%m-%d %H:%M}".format(datetime.now()))
+
+#output
+Today's date is 2020-08-08 06:29
+</pre>
+
+        
+    </div>
+
+
+
+
+
+    <div class="sidebar" style="margin-right: 50px;">
+        <div class="post">
+            <h2 class="post-title">What is Python</h2>
+    
+            <p class="post-text">Introduction to Python and why you should learn the Python language</p>
+    
+            <a href="homepage.html">Home</a>
+             
+        </div>
+
+        <div class="post">
+            <h2 class="post-title">Installation Process</h2>
+    
+            <p class="post-text">How to get python installed on your machine</p>
+    
+            <a href="installation.html">Installation</a>
+             
+        </div>	
+     
+        <div class="post">
+            <h2 class="post-title">The basics of Python</h2>
+    
+            <p class="post-text">The basics of python that you need to know to get you started.</p>
+    
+            <a href="basics.html">Python Basics</a>
+        </div>
+    
+        <div class="post">
+            <h2 class="post-title">Flow Control</h2>
+    
+            <p class="post-text">Flow Control statements that will help you break out of Loops and many more</p>
+    
+            <a href="flowcontrol.html">Flow Control</a>
+        </div>
+    
+        <div class="post">
+            <h2 class="post-title">Functions 1</h2>
+    
+            <p class="post-text">Functions in Python</p>
+    
+            <a href="functions.html">Functions</a>
+        </div>
+    
+        <div class="post">
+            <h2 class="post-title">Python Lists</h2>
+    
+            <p class="post-text">List is one of the most used Data Structure in Python.Learn how to use it very well</p>
+    
+            <a href="lists.html">Lists</a>
+        </div>
+    
+        <div class="post">
+            <h2 class="post-title">Python Dictionaries and Structuring of Data</h2>
+    
+            <p class="post-text">Data Structure in Python</p>
+    
+            <a href="dictionaries.html">Dictionaries and Structuring Data</a>
+        </div>		
+  
+        <div class="post">
+            <h2 class="post-title">How to Manipulating Strings in Python</h2>
+    
+            <p class="post-text">How to use strings in Python</p>
+    
+            <a href="strings.html">Manipulating Strings</a>
+        </div>	
+  
+        <div class="post">
+            <h2 class="post-title">Functions 2</h2>
+    
+            <p class="post-text">Built-In Functions</p>
+    
+            <a href="functions2.html">Functions in depth</a>
+        </div>	
+  
+        <div class="post">
+            <h2 class="post-title">Functions 3</h2>
+    
+            <p class="post-text">User Defined Functions</p>
+    
+            <a href="functions3.html">Functions in depth</a>
+        </div>
+          
+        <div class="post">
+            <h2 class="post-title">Trial Questions</h2>
+    
+            <p class="post-text">Question and Answers that will help improve and apply the knowledge you've acquired so far</p>
+    
+            <a href="questions_answers.html">Questions and Answers</a>
+        </div>	
+  
+        <div class="post">
+            <h2 class="post-title">Way Forward</h2>
+    
+            <p class="post-text">What to do after this beginner crash course</p>
+    
+            <a href="wayforward.html">Way Forward</a>
+        </div>	
+
+      </div>
+
+
+  </div>
+
+        
+  
+  
+    <div class="footer">
+      <p style="text-align: center;">Copyright © 2021 - (Gibson)</p>
+      
+    </div>
+  
+  <!-- jQuery and JS bundle w/ Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  <script src="../Js/bootstrap.bundle.min.js" ></script>
+  
+
+
+
+
+
+
+
+</body>
+</html>

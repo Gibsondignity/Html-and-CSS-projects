@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="../Css/bootstrap.min.css">
+    
+
+    <link rel="stylesheet" href="../Css/style.css">
+    <link rel="stylesheet" href="../Css/main.css"> 
+
+    <title>Python Beginner Course</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark bg-primary"> 
+      
+        <a class="navbar-brand" href="homepage.html">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+
+
+<div id="main">
+
+    <div class="container">
+
+
+        <h1>FLOW CONTROL STATEMENTS</h1>
+
+    <br>
+    <p>
+        Now we're going to talk about conditional execution. Conditional execution is where we start sort of adding more intelligence. 
+        Sequential execution, you just type them in and Python does it. But sequential execution is where you can choose one of two paths. 
+        Turn left, or turn right, or go straight. 
+        You can make choices and this is an essential part of making computers seem intelligent. And so the key to this is the <b><i>if statement</i></b>. 
+        So the <b><i>if statement</i></b> is the <b>reserved word</b> that indicates that we're going to do something conditionally and it's not that hard to read. So the <b><i>if statement</i></b> has a condition, it's really a question. 
+    </p>
+
+    <p>A program’s flow control is the order in which the program’s code executes. 
+        The flow control of a Python program is regulated by conditional statements, loops, and function calls. On this page we will cover the if statement, for and while loops; functions are covered on the next page.
+    </p><br>
+
+    <h2>#1: If Statement</h2>
+
+    <p>
+        Python <strong><i>if Statement</i></strong> is used for <strong><i>decision-making</i></strong> operations. 
+        It contains a body of code which runs only when the condition given in the if statement is true. 
+        If the condition is false, then the optional else statement runs which contains some code for the else condition.
+    </p>
+    <p>Perhaps the most well-known statement type is the if statement.</p>
+<pre>
+>>>  if expression:
+...     #statement(s)
+>>>  elif expression:
+...     #statement(s)
+>>>  elif expression:
+...     #statement(s)
+...
+>>>  else:
+...     #statement(s)
+</pre><br>
+
+
+<pre>
+>>> x = int(input("Please enter an integer: "))
+Please enter an integer: 42
+>>> if x < 0:
+...     x = 0
+...     print('Negative changed to zero')
+... elif x == 0:
+...     print('Zero')
+... elif x == 1:
+...     print('Single')
+... else:
+...     print('More')
+...
+More
+
+</pre>
+
+
+
+<pre>
+is_male = True
+is_tall = True
+        
+if is_male and is_tall:
+    print("You are a tall male!")
+elif is_male and not(is_tall):
+    print("You are a male but not tall!")
+elif not(is_male) and is_tall:
+    print("You are tall but not male!")
+else:
+    print("You are neigther a tall nor male!")
+</pre>
+
+    <p><b>NB: <i>not</i></b> is use to negate a positive statement</p>
+
+    <img src="../Images/multi way.png" alt="flowcontrol multi-way "><br><br>
+
+    <p>
+    There can be zero or more <strong>elif</strong> parts, and the <strong>else</strong> part is optional. 
+    The keyword <strong>‘elif’</strong> is short for <strong>‘else if’,</strong> and is useful to avoid excessive indentation. 
+    An <strong>if … elif … elif …</strong> sequence is a substitute for the switch or case statements found in other languages.
+    </p><br>
+
+
+    <h2>#2: for Statements</h2>
+    <p>
+      The <strong>for</strong> statement in Python differs a bit from what you may be used to in C or Pascal. Rather than always iterating over an arithmetic 
+      progression of numbers (like in Pascal), or giving the user the ability to define both the iteration step and halting condition (as C), 
+      Python’s for statement iterates over the items of any sequence (a list or a string), in the order that they appear in the sequence. For example (no pun intended):
+    </p>
+
+<pre>
+>>>
+>>> # Measure some strings:
+... words = ['cat', 'window', 'defenestrate']
+>>> for w in words:
+...     print(w, len(w))
+...
+cat 3
+window 6
+defenestrate 12
+</pre>
+
+
+
+    <h4> range() Function</h4>
+    <p>
+    If you do need to iterate over a sequence of numbers, the built-in function range() comes in handy. It generates arithmetic progressions:
+    </p>
+<pre>
+>>>
+>>> for i in range(5):
+...     print(i)
+...
+0
+1
+2
+3
+4
+</pre>
+
+<p>
+The given end point is never part of the generated sequence; range(10) generates 10 values, the legal indices for items of a sequence of length 10. 
+It is possible to let the range start at another number, or to specify a different increment (even negative; sometimes this is called the ‘step’):
+</p>
+
+<pre>
+>>>
+>>> list(range(5, 10))
+[5, 6, 7, 8, 9]
+>>>
+>>> list(range(0, 10, 3))
+[0, 3, 6, 9]
+>>>
+>>> list(range(-10, -100, -30))
+[-10, -40, -70]
+>>>
+</pre>
+
+
+
+    <p>To iterate over the indices of a sequence, you can combine <strong>range()</strong> and <strong>len()</strong> as follows:</p>
+
+<pre>
+>>>
+>>> a = ['Mary', 'had', 'a', 'little', 'lamb']
+>>> for i in range(len(a)):
+...     print(i, a[i])
+...
+0 Mary
+1 had
+2 a
+3 little
+4 lamb
+</pre>
+    <p>
+      In most such cases, however, it is convenient to use the enumerate() function, see Looping Techniques.
+      A strange thing happens if you just print a range:
+  </p>
+
+<pre>
+>>>
+>>> range(10)
+range(0, 10)
+</pre>
+
+    <p>
+      In many ways the object returned by range() behaves as if it is a list, but in fact it isn’t. It is an object which returns the successive items of the desired sequence when you iterate over it, but it doesn’t really make the list, thus saving space.
+      We say such an object is iterable, that is, suitable as a target for functions and constructs that expect something from which they can obtain successive items until the supply is exhausted. We have seen that the for statement is such a construct, while an example of a function that takes an iterable is sum():
+    </p>
+<pre>
+>>>
+>>> sum(range(4))  # 0 + 1 + 2 + 3
+6
+</pre>
+
+<p>
+Later we will see more functions that return iterables and take iterables as arguments. In chapter Data Structures, we will discuss in more detail about list().
+4.4. break and continue Statements, and else Clauses on Loops
+The break statement, like in C, breaks out of the innermost enclosing for or while loop.
+Loop statements may have an else clause; it is executed when the loop terminates through exhaustion of the iterable (with for) or when the condition becomes false (with while), but not when the loop is terminated by a break statement. This is exemplified by the following loop, which searches for prime numbers:
+<pre>
+>>>
+>>> for n in range(2, 10):
+...     for x in range(2, n):
+...         if n % x == 0:
+...             print(n, 'equals', x, '*', n//x)
+...             break
+...     else:
+...         # loop fell through without finding a factor
+...         print(n, 'is a prime number')
+...
+2 is a prime number
+3 is a prime number
+4 equals 2 * 2
+5 is a prime number
+6 equals 2 * 3
+7 is a prime number
+8 equals 2 * 4
+9 equals 3 * 3
+
+</pre>
+      <p>
+        (Yes, this is the correct code. Look closely: the else clause belongs to the for loop, not the if statement.)
+        When used with a loop, the else clause has more in common with the else clause of a try statement than it does with that of if statements: a try statement’s else clause runs when no exception occurs, and a loop’s else clause runs when no break occurs. For more on the try statement and exceptions, see Handling Exceptions.
+        The continue statement, also borrowed from C, continues with the next iteration of the loop:
+      </p>
+
+<pre>
+>>>
+>>> for num in range(2, 10):
+...     if num % 2 == 0:
+...         print("Found an even number", num)
+...         continue
+...     print("Found an odd number", num)
+...
+Found an even number 2
+Found an odd number 3
+Found an even number 4
+Found an odd number 5
+Found an even number 6
+Found an odd number 7
+Found an even number 8
+Found an odd number 9
+
+</pre>
+
+    <h2>#3: While Loop</h2>
+    <P>Let’s see how Python’s while statement is used to construct loops. We’ll start simple and embellish as we go.</P>
+
+    <p>The format of a rudimentary while loop is shown below:</p>
+<pre>
+while expr:
+  statement(s)
+
+</pre>    
+
+    <p><b>statement(s)</b> represents the block to be repeatedly executed, often referred to as the body of the loop. This is denoted with indentation, just as in an if statement.</p>
+    
+    <aside> All control structures in Python use indentation to define blocks. See the discussion on grouping statements in the previous tutorial to review.</aside>
+    
+    <p>The controlling expression, <b><i>expr,</i></b> typically involves one or more variables that are initialized prior to starting the loop and then modified somewhere in the loop body.</p>
+    
+    <p>When a while loop is encountered, <b><i>expr</i></b> is first evaluated in Boolean context. If it is true, the loop body is executed. Then <b></i>expr</i></b> is checked again, and if still true, the body is executed again. This continues until <b><i>expr></i></b> becomes false, at which point program execution proceeds to the first statement beyond the loop body.</p>
+    
+    <p>Consider this loop:</p>
+
+<pre>
+>>> n = 5
+>>> while n > 0:
+...     n -= 1
+...     print(n)
+...
+4
+3
+2
+1
+0
+</pre>
+
+    <p>Here’s what’s happening in this example:</p>
+    
+    <ul>
+      <p>
+        <li> n is initially 5. The expression in the while statement header on line 2 is n > 0, which is true, so the loop body executes. Inside the loop body on line 3, n is decremented by 1 to 4, and then printed.</li>
+        
+        <li>When the body of the loop has finished, program execution returns to the top of the loop at line 2, and the expression is evaluated again. It is still true, so the body executes again, and 3 is printed.</li>
+        
+        <li>This continues until n becomes 0. At that point, when the expression is tested, it is false, and the loop terminates. Execution would resume at the first statement following the loop body, but there isn’t one in this case.</li>
+        
+        <li>Note that the controlling expression of the while loop is tested first, before anything else happens. If it’s false to start with, the loop body will never be executed at all:</li>
+      </p>
+    </ul>
+  
+<pre>
+>>> n = 0
+>>> while n > 0:
+...     n -= 1
+...     print(n)
+...
+
+</pre>
+    <p>In the example above, when the loop is encountered, n is 0. The controlling expression n > 0 is already false, so the loop body never executes.</p>
+    
+    <p>Here’s another while loop involving a list, rather than a numeric comparison:</p>
+<pre>
+>>> a = ['foo', 'bar', 'baz']
+>>> while a:
+...     print(a.pop(-1))
+...
+baz
+bar
+foo
+
+</pre>
+    <p>When a list is evaluated in Boolean context, it is truthy if it has elements in it and falsy if it is empty. In this example, a is true as long as it has elements in it. Once all the items have been removed with the .pop() method and the list is empty, a is false, and the loop terminates.</p>
+    <br>
+    
+    <h2>#4: Pass Statements</h2>
+    <p>
+      The pass statement does nothing. It can be used when a statement is required syntactically but the program requires no action. For example:
+    </p>
+
+<pre>
+>>>
+>>> while True:
+...     pass  # Busy-wait for keyboard interrupt (Ctrl+C)
+...
+
+</pre>
+
+    <p>This is commonly used for creating minimal classes:</p>
+<pre>
+>>>
+>>> class MyEmptyClass:
+...     pass
+...
+
+</pre>
+
+    <p>
+      Another place pass can be used is as a place-holder for a function or conditional body when you are working on new code, allowing you to keep thinking at a more abstract level. The pass is silently ignored:
+    </p>
+
+<pre>
+>>>
+>>> def initlog(*args):
+...     pass   # Remember to implement this!
+...
+</pre><br>
+
+
+  <h2>#5: Break and Continue </h2>
+  <iframe width="619" height="353" src="https://www.youtube.com/embed/Mho_1WO-ht4?list=PL98qAXLA6afuh50qD2MdAj3ofYjZR_Phn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <br><br>
+</div>
+                
+    
+            
+
+
+
+
+
+    <div class="sidebar" style="margin-right: 50px;">
+
+      <div class="post">
+        <h2 class="post-title">What is Python</h2>
+
+        <p class="post-text">Introduction to Python and why you should learn the Python language</p>
+
+        <a href="homepage.html">Home</a>
+         
+    </div>
+
+    <div class="post">
+        <h2 class="post-title">Installation Process</h2>
+
+        <p class="post-text">How to get python installed on your machine</p>
+
+        <a href="installation.html">Installation</a>
+         
+    </div>	
+ 
+    <div class="post">
+        <h2 class="post-title">The basics of Python</h2>
+
+        <p class="post-text">The basics of python that you need to know to get you started.</p>
+
+        <a href="basics.html">Python Basics</a>
+    </div>
+
+    <div class="post">
+        <h2 class="post-title">Flow Control</h2>
+
+        <p class="post-text">Flow Control statements that will help you break out of Loops and many more</p>
+
+        <a href="flowcontrol.html">Flow Control</a>
+    </div>
+
+    <div class="post">
+        <h2 class="post-title">Functions 1</h2>
+
+        <p class="post-text">Functions in Python</p>
+
+        <a href="functions.html">Functions</a>
+    </div>
+
+    <div class="post">
+        <h2 class="post-title">Python Lists</h2>
+
+        <p class="post-text">List is one of the most used Data Structure in Python.Learn how to use it very well</p>
+
+        <a href="lists.html">Lists</a>
+    </div>
+
+    <div class="post">
+        <h2 class="post-title">Python Dictionaries and Structuring of Data</h2>
+
+        <p class="post-text">Data Structure in Python</p>
+
+        <a href="dictionaries.html">Dictionaries and Structuring Data</a>
+    </div>		
+
+    <div class="post">
+        <h2 class="post-title">How to Manipulating Strings in Python</h2>
+
+        <p class="post-text">How to use strings in Python</p>
+
+        <a href="strings.html">Manipulating Strings</a>
+    </div>	
+
+    <div class="post">
+        <h2 class="post-title">Functions 2</h2>
+
+        <p class="post-text">Built-In Functions</p>
+
+        <a href="functions2.html">Functions in depth</a>
+    </div>	
+
+    <div class="post">
+        <h2 class="post-title">Functions 3</h2>
+
+        <p class="post-text">User Defined Functions</p>
+
+        <a href="functions3.html">Functions in depth</a>
+    </div>
+      
+    <div class="post">
+        <h2 class="post-title">Trial Questions</h2>
+
+        <p class="post-text">Question and Answers that will help improve and apply the knowledge you've acquired so far</p>
+
+        <a href="questions_answers.html">Questions and Answers</a>
+    </div>	
+
+    <div class="post">
+        <h2 class="post-title">Way Forward</h2>
+
+        <p class="post-text">What to do after this beginner crash course</p>
+
+        <a href="wayforward.html">Way Forward</a>
+    </div>	
+    </div>
+
+
+  </div>
+
+        
+  
+  
+    <div class="footer">
+      <p style="text-align: center;">Copyright © 2021 - (Gibson)</p>
+      
+    </div>
+  
+  <!-- jQuery and JS bundle w/ Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  <script src="../Js/bootstrap.bundle.min.js" ></script>
+  
+
+
+
+
+
+
+
+</body>
+</html>
